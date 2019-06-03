@@ -136,4 +136,3 @@ try:
 finally:
 
 	print "Exit"
-	GPIO.cleanup()
