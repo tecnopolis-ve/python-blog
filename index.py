@@ -125,23 +125,6 @@ if __name__ == '__main__':
         db.create_all()
     app.run(debug=True)
 
-def saveAlert(phone, data):
-
-    #Get location's name
-    location = session.query(Location).filter("Location.phone LIKE '%" + phone + "%'").first()
-
-    if(location == None):
-        location = phone
-    else:
-        location = location.name
-
-    alert = Alert()
-    alert.phone = phone
-    alert.location = location
-    alert.data = data
-    session.add(alert)
-    session.commit()
-
 print 'Inicializando'
 
 try:
